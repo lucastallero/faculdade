@@ -98,8 +98,85 @@
 # 6.6
 
 # i = 20
-# for i in range([2]):
-#     print('i = ',i)
+# for i in range(20, -1, -2):
+#     print(i)
 
 # 6.7
 
+# for i in range(3):
+#     for j in range(1,3):
+#         print(i/j)
+        
+# 6.8
+
+def amigas():
+    amiga1 = 'abcdefghijkl'
+    amiga2 = 'ahwefgghijkl'
+    j = 0.00
+    pct = len(amiga1)/100
+
+    for i in range(len(amiga1)):
+        if amiga1[i] == amiga2[i]:
+            j += pct
+    
+    if j > 0.9:
+        print('Amigas')
+    else:
+        print('não são amigas')
+
+# amigas()
+
+# 6.9
+
+import math
+
+def smallest(numero):
+    i = 0
+    divisor = 2
+    while i == 0:
+        if numero % divisor == 0:
+            i = 1
+        else:
+            divisor += 1
+    print(f'O menor divisor de {numero} é {divisor}')
+
+# # smallest(25)
+
+def primo(numero):
+    raiz_quadrada = math.sqrt(numero) + 1
+    for divisor in range(2,int(raiz_quadrada)):
+        if numero % divisor == 0:
+            print(f"{numero} não é primo")
+            return
+        if divisor <= int(raiz_quadrada):
+            print(f"{numero} é primo")
+    
+# primo(10)
+
+import random
+
+def dado(rodados):
+    cont_impar = 0
+    cont_par = 0
+    for i in range(rodados):
+        roll = random.randrange(1,7)
+        if roll % 2 != 0:
+            cont_impar += 1
+        if roll % 2 == 0:
+            cont_par += 1
+    
+    pct_par = (cont_par * 100)/rodados
+    pct_impar = (cont_impar * 100)/rodados
+    print(pct_impar, pct_par)
+
+# dado(50000)
+
+def factorial(n):
+    resultado = 1
+    for i in range(n):
+        j = n-i
+        resultado *= j
+
+    print(resultado)
+
+# factorial(5)
